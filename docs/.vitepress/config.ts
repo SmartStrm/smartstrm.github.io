@@ -76,13 +76,21 @@ export default defineConfig({
         text: '版本与反馈',
         items: [
           {
-            text: '更新日志',
-            link: 'https://github.com/Cp0204/SmartStrm/blob/main/VERSION.md'
+            text: 'GitHub',
+            link: 'https://github.com/Cp0204/SmartStrm'
+          },
+          {
+            text: 'Docker',
+            link: 'https://hub.docker.com/r/cp0204/SmartStrm'
           },
           {
             text: '问题反馈',
             link: 'https://github.com/Cp0204/SmartStrm/issues'
-          }
+          },
+          {
+            text: '更新日志',
+            link: 'https://github.com/Cp0204/SmartStrm/blob/main/VERSION.md'
+          },
         ]
       },
       { text: 'Pro', link: 'https://licenserver.0x69.win/store/smartstrm' }
@@ -126,7 +134,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'docker', link: 'https://hub.docker.com/r/Cp0204/SmartStrm' },
+      // { icon: 'docker', link: 'https://hub.docker.com/r/Cp0204/SmartStrm' },
       // { icon: 'github', link: 'https://github.com/Cp0204/SmartStrm' },
       { icon: 'telegram', link: 'https://t.me/smartstrm' },
     ],

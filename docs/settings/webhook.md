@@ -53,6 +53,19 @@ QAS 在自动转存夸克资源后，可以通知 SmartStrm 立即生成 STRM。
   - 使用 OpenList 驱动时需填写，夸克、115、123网盘同 QAS，天翼云盘 `/你挂载在oplist的路径:/全部文件` ，只改动 : 前面部分，后面 /全部文件 保持不变。
 - **delay**: `0` 可选，延迟执行的秒数
 
+<details>
+<summary>天翼网盘配置示例图</summary>
+
+![cs_189_set](img/cs_189_set.png)
+
+</details>
+
+<details>
+<summary>夸克网盘配置示例图</summary>
+
+![cs_quark_set](img/cs_quark_set.png)
+
+</details>
 
 ### 网页转存自动触发任务
 
