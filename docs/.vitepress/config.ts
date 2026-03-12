@@ -19,8 +19,11 @@ export default defineConfig({
     logo: '/icon.svg',
     // https://vitepress.dev/reference/default-theme-config
     search: {
-      provider: 'local',
+      provider: 'algolia',
       options: {
+        appId: 'TJNGE094S4',
+        apiKey: '5fb52936d39c71feb19bb1b4322b70d0',
+        indexName: 'smartstrm.github.io',
         locales: {
           root: {
             translations: {
@@ -29,19 +32,38 @@ export default defineConfig({
                 buttonAriaLabel: '搜索'
               },
               modal: {
-                displayDetails: '显示详细列表',
-                resetButtonTitle: '重置搜索',
-                backButtonTitle: '关闭搜索',
-                noResultsText: '没有结果',
                 footer: {
                   selectText: '选择',
-                  selectKeyAriaLabel: '输入',
+                  submitQuestionText: '提交问题',
+                  selectKeyAriaLabel: '回车键',
                   navigateText: '导航',
-                  navigateUpKeyAriaLabel: '上箭头',
-                  navigateDownKeyAriaLabel: '下箭头',
+                  navigateUpKeyAriaLabel: '向上箭头',
+                  navigateDownKeyAriaLabel: '向下箭头',
                   closeText: '关闭',
-                  closeKeyAriaLabel: 'Esc'
-                }
+                  backToSearchText: '返回搜索',
+                  closeKeyAriaLabel: 'Esc 键',
+                  poweredByText: '由…提供支持'
+                },
+                errorScreen: {
+                  titleText: '无法获取结果',
+                  helpText: '你可能需要检查网络连接。'
+                },
+                startScreen: {
+                  recentSearchesTitle: '最近',
+                  noRecentSearchesText: '暂无最近搜索',
+                  saveRecentSearchButtonTitle: '保存此搜索',
+                  removeRecentSearchButtonTitle: '从历史记录中移除此搜索',
+                  favoriteSearchesTitle: '收藏',
+                  removeFavoriteSearchButtonTitle: '从收藏中移除此搜索',
+                  recentConversationsTitle: '最近对话',
+                  removeRecentConversationButtonTitle: '从历史记录中移除此对话'
+                },
+                noResultsScreen: {
+                  noResultsText: '未找到相关结果',
+                  suggestedQueryText: '尝试搜索',
+                  reportMissingResultsText: '认为此查询应该有结果？',
+                  reportMissingResultsLinkText: '告诉我们。'
+                },
               }
             }
           }
