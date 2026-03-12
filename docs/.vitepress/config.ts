@@ -1,7 +1,15 @@
 import { defineConfig } from 'vitepress'
+import llmstxt from 'vitepress-plugin-llms'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    plugins: [llmstxt({
+      ignoreFiles: [
+        'help/open-source-software-notice.md'
+      ]
+    })]
+  },
   title: "SmartStrm",
   description: "SmartStrm 用户文档 - 一个媒体库 STRM 文件生成工具",
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],

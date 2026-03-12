@@ -1,6 +1,8 @@
 {
+  "type": "module",
   "devDependencies": {
-    "vitepress": "^2.0.0-alpha.16"
+    "vitepress": "^2.0.0-alpha.16",
+    "vitepress-plugin-llms": "^1.11.0"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
