@@ -19,3 +19,20 @@
 - [CloudSaver](https://github.com/jiangrui1994/cloudsaver)
 
   一个基于 Vue 3 + Express 的网盘资源搜索与转存工具。
+
+## 物料
+
+### 应用名
+
+`SmartStrm`
+
+>（两个S大写）并非强制但建议使用，我会比较欣慰。
+
+### 应用图标
+
+#### [svg, 256x256]
+![icon](img/icon.svg)
+
+#### [png, 512x512]
+
+![icon](img/icon.png)
