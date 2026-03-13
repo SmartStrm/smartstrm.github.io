@@ -238,6 +238,7 @@ export default defineConfig({
         text: '帮助支持',
         items: [
           { text: '第三方教程', link: '/help/tutorials' },
+          { text: '简明技巧', link: '/help/skill' },
           { text: '常见问题', link: '/help/faq' },
           { text: '许可说明', link: '/help/license' },
           { text: '资料资源', link: '/help/resource' },
