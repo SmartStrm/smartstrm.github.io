@@ -76,7 +76,18 @@ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtow
 ## 其他版本
 
 ### 飞牛应用
-SmartStrm 已上架 fnOS，你可以在直接在应用中心搜索安装。由于飞牛审核上架周期较长，通常会比 Docker 镜像滞后 1~2 个版本。你可以通过此脚本替换核心程序进行更新：
+
+SmartStrm 已上架 fnOS，你可以在直接在应用中心搜索安装。
+
+#### 应用数据
+
+应用数据默认存放在 `应用文件/SmartStrm` 中，等同于： `/安装存储空间/@appshare/SmartStrm` ，卸载应用不会自动删除数据。
+
+你可以在安装向导或中心的“应用设置”中修改 `STRM保存目录` 的路径，并赋予读写权限。
+
+#### 应用更新
+
+由于飞牛审核上架周期较长，通常会比 Docker 镜像滞后 1~2 个版本。你可以通过此脚本替换核心程序进行更新：
 
 ```bash
 # 飞牛应用更新 SmartStrm 核心程序脚本
