@@ -15,6 +15,9 @@ export default defineConfig({
       host: '0.0.0.0',
     }
   },
+  sitemap: {
+    hostname: 'https://smartstrm.github.io'
+  },
   title: "SmartStrm",
   description: "SmartStrm 用户文档 - 一个媒体库 STRM 文件生成工具",
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
