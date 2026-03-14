@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import footnote from 'markdown-it-footnote'
 import llmstxt from 'vitepress-plugin-llms'
 
 // https://vitepress.dev/reference/site-config
@@ -17,6 +18,11 @@ export default defineConfig({
   },
   sitemap: {
     hostname: 'https://smartstrm.github.io'
+  },
+  markdown: {
+    config: (md) => {
+      md.use(footnote)
+    }
   },
   title: "SmartStrm",
   description: "SmartStrm 用户文档 - 一个媒体库 STRM 文件生成工具",

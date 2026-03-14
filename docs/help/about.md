@@ -2,7 +2,7 @@
 
 ## 项目诞生背景
 
-这个项目最开始源自于 夸克自动转存 (QAS) 的一次 [PR 讨论](https://github.com/Cp0204/quark-auto-save/pull/65#issuecomment-2779488163)，以及其他 STRM 项目自己用着处处不顺手（精准生成、速度快、方便调用）。
+SmartStrm 最开始源自于 夸克自动转存 (QAS) 的一次 [PR 讨论](https://github.com/Cp0204/quark-auto-save/pull/65#issuecomment-2779488163)，以及其他 STRM 项目自己用着处处不顺手（精准生成、速度快、方便调用）。
 
 所以立项之初就决定了要和 QAS 能联动，后来也和 CloudSaver 作者一拍即合，基本做到这俩工具“搜索->转存->生成STRM->Emby入库->播放”全自动的工作流，这里有一个[演示视频](https://www.bilibili.com/video/BV1wtaAzCEBv)。
 
