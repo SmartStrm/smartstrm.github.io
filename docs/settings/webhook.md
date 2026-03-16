@@ -159,6 +159,10 @@ body = '''
 >
 > 当 MP 整理完成 `/media/movie/影名 (2026)` 时，SS 会根据映射，自动找到要触发的任务。
 
+在 MoviePilot 的 **插件->Webhook**（没有就在插件市场中搜，作者是 jxxghp 的）中设置：
+- **请求方式**：POST
+- **webhook地址**：SmartStrm Webhook 地址
+
 ## 开发者接口
 
 SmartStrm 还支持通过自定义 POST 请求手动触发特定任务，供开发者调用：
