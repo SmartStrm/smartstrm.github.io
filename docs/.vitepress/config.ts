@@ -197,6 +197,10 @@ export default defineConfig({
         text: '版本与反馈',
         items: [
           {
+            text: '更新日志',
+            link: '/help/changelog'
+          },
+          {
             text: 'GitHub',
             link: 'https://github.com/Cp0204/SmartStrm'
           },
@@ -207,10 +211,6 @@ export default defineConfig({
           {
             text: '问题反馈',
             link: 'https://github.com/Cp0204/SmartStrm/issues'
-          },
-          {
-            text: '更新日志',
-            link: 'https://github.com/Cp0204/SmartStrm/blob/main/VERSION.md'
           },
         ]
       },
