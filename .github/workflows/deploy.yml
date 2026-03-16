@@ -50,3 +50,14 @@ jobs:
         uses: actions/deploy-pages@v4
       - name: Print deployment URL
         run: echo "Deployed to ${{ steps.deployment.outputs.page_url }}"
+
+      - name: Trigger Algolia Crawler
+        env:
+          ALGOLIA_CRAWLER_ID: ${{ secrets.ALGOLIA_CRAWLER_ID }}
+          ALGOLIA_CRAWLER_AUTH: ${{ secrets.ALGOLIA_CRAWLER_AUTH }}
+        run: |
+          CRAWLER_API_ENDPOINT="https://crawler.algolia.com/api/1/crawlers/${ALGOLIA_CRAWLER_ID}/reindex"
+          curl -f -X POST \
+            -H "Authorization: Basic ${ALGOLIA_CRAWLER_AUTH}" \
+            "${CRAWLER_API_ENDPOINT}"
+          echo "Algolia Crawler trigger request sent."
