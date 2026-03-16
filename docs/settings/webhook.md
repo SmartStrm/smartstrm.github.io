@@ -93,11 +93,13 @@ QAS 在自动转存夸克资源后，可以通知 SmartStrm 立即生成 STRM。
 
 > [!TIP] 配置实例
 >
-> 使用 115 网盘，在 CD2 的名称是 `115` ，在 SS 的名称是 `open115_Cp0204`
+> 使用 115 网盘，在 CD2 的名称是 `115open` ，在 SS 的名称是 `open115_Cp0204`
 >
-> 在 SS 中填写存储映射 `115=open115_Cp0204` ，创建路径为 `/影视库/电影` 的任务
+> 在 SS 中填写存储映射 `115open=open115_Cp0204` ，创建路径为 `/影视库/电影` 的任务
 >
-> 当 CD2 中检测到 `/115/影视库/电影/xxx` 变更时，SS 会根据变更的文件路径，自动找到要触发的任务。
+> 当 CD2 中检测到 `/115open/影视库/电影/影名 (2026)` 变更时，SS 会根据映射，自动找到要触发的任务。
+
+CD2 中的配置，将以下内容复制到 CD2 的 Webhook 配置中，文件名自定义。
 
 <details>
 <summary>CloudDrive2 Webhook 配置</summary>
@@ -138,6 +140,24 @@ body = '''
 ```
 
 </details>
+
+### MoviePilot 整理完成触发任务
+
+**使用场景**：影视资源和 MoviePilot 在远程大盘主机上，而 SS 、Emby 在本地轻主机上。
+
+在 **系统设置->Webhook->MoviePilot 整理完成触发设置** 中启用功能，默认关闭。
+
+并设置 **存储映射** ：如 `/media/movie=OPLIST/movie,/media/tv=OPLIST/tv` ，表示把 MP 的 `/media/movie` 路径映射到 SS 名为 `OPLIST` 的存储的 `/movie` 目录。
+
+> [!TIP] 配置实例
+>
+> 在远程主机 MP 容器内电影路径是 `/media/movie` ，在 OpenList 中把该目录挂载到 `/movie`
+>
+> 在本地部署 SS ，添加该远程 OpenList 存储，名为 `OPLIST` ，并创建路径为 `/movie` 的任务
+>
+> 填写存储映射 `/media/movie=OPLIST/movie`
+>
+> 当 MP 整理完成 `/media/movie/影名 (2026)` 时，SS 会根据映射，自动找到要触发的任务。
 
 ## 开发者接口
 
