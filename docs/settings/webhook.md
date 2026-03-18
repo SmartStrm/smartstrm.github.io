@@ -71,7 +71,7 @@ QAS 在自动转存夸克资源后，可以通知 SmartStrm 立即生成 STRM。
 
 在网页转存资源成功时，向 SmartStrm 推送当前的网盘类型和保存路径，自动匹配并触发任务。
 
-#### 使用指引
+**使用指引**：
 
 1. 安装 [油猴/暴力猴/篡改猴](https://greasyfork.org/zh-CN/help/installing-user-scripts) 浏览器扩展
 2. 安装脚本：[SmartStrm助手 - 转存触发任务](https://greasyfork.org/zh-CN/scripts/549634)
