@@ -14,8 +14,8 @@ hero:
       text: 项目介绍
       link: guide/what-is
     - theme: alt
-      text: 快速开始
-      link: guide/usage
+      text: 安装部署
+      link: guide/deploy
     - theme: alt
       text: Docker Hub
       link: https://hub.docker.com/r/cp0204/smartstrm
