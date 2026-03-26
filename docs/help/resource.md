@@ -36,16 +36,17 @@
 
 iOS 安装证书可以抓，安卓没 root 抓不了，可以在电脑上使用模拟器抓包，以下是简要教程：
 
-**准备工作**：电脑，下载 [MuMu模拟器](https://mumu.163.com/)、[proxypin-android.apk](https://github.com/wanghongenpin/proxypin/releases)、[夸克网盘.apk](https://www.wandoujia.com/apps/8449577/history_v100)
+**准备工作**：电脑，下载 [MuMu模拟器](https://mumu.163.com/)、[proxypin-android.apk](https://github.com/wanghongenpin/proxypin/releases)、[夸克.apk](https://www.wandoujia.com/apps/7457948/history_v954)
 
 **实施步骤：**
 1. 启动 MuMu模拟器：
-   - “右上角菜单->设备设置->其他->Root 权限” 打开
-   - “磁盘->磁盘共享 展开->可写系统盘” 打开
-2. 把 ProxyPin 、夸克网盘 的 apk 拖入模拟器安装
-3. ProxyPin 打开 “右上角菜单->HTTPS代理->启用HTTPS代理、安装根证书->一键自动安装到系统”，重启模拟器
-4. 打开 ProxyPin 启动抓包，挂后台，打开 夸克网盘 登录随便点几个网盘文件夹，回 ProxyPin 查看抓到的 URL
-5. 将 URL 填入 **夸克网盘** 存储的参数中（v0.4.2+ 支持）
+   - **右上角菜单->设备设置->其他->Root 权限** 打开
+   - **磁盘->磁盘共享 展开->可写系统盘** 打开
+2. 把 ProxyPin 、夸克 的 apk 拖入模拟器安装
+3. ProxyPin 打开 **右上角菜单->HTTPS代理->启用HTTPS代理、安装根证书->一键自动安装到系统**，重启模拟器
+4. 打开 ProxyPin 启动抓包，挂后台，打开 **夸克->登录后->随便点几个网盘文件夹**，回到 ProxyPin 查看抓到的请求
+5. 在抓包列表找到 `drive-m.../file` 的请求，**长按请求->复制URL** （不要进入详情复制，否则参数不正确）
+6. 将 URL 填入 **夸克网盘** 存储的参数中（v0.4.2+ 支持）
 
 ### 115 网盘风控说明
 
