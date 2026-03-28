@@ -14,7 +14,7 @@ hero:
       text: 项目介绍
       link: guide/what-is
     - theme: alt
-      text: 安装部署
+      text: 快速部署
       link: guide/deploy
     - theme: alt
       text: Docker Hub

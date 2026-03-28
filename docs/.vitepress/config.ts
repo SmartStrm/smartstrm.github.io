@@ -221,8 +221,8 @@ export default defineConfig({
         text: '快速入门',
         items: [
           { text: '项目介绍', link: '/guide/what-is' },
-          { text: '安装部署', link: '/guide/deploy' },
-          { text: '快速开始', link: '/guide/usage' },
+          { text: '快速部署', link: '/guide/deploy' },
+          { text: '开始使用', link: '/guide/usage' },
         ]
       },
       {

@@ -1,4 +1,4 @@
-# 安装部署
+# 快速部署
 
 SmartStrm 主要通过 Docker 镜像分发，支持 Linux 与所有常见的 NAS 系统（群晖、fnOS、Unraid、绿联、极空间等）。
 
