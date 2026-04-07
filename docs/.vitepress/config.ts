@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
 import footnote from 'markdown-it-footnote'
 import llmstxt from 'vitepress-plugin-llms'
+import { mermaidPlugin } from './plugins/vitepress-mermaid'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -22,6 +23,7 @@ export default defineConfig({
   markdown: {
     config: (md) => {
       md.use(footnote)
+      md.use(mermaidPlugin)
     }
   },
   title: "SmartStrm",
