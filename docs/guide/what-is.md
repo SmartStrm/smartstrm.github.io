@@ -33,3 +33,56 @@
 - **插件管理**：提供文件名修复、内容替换、通知刷新等多种扩展能力
 - **Webhook**：强大的“朋友圈”功能联动，转存触发任务，Emby 同步删除
 - **302代理**：一站式 Emby/Jellyfin/Plex/飞牛影视 302 直链播放
+
+## 工作原理
+
+> [!TIP]
+>
+> 可能是全网第一个把 STRM 302 方案解释清楚的原理图，**古法手打，人工校对，引用请保留出处**。
+>
+> *为便于识别和理解，部分细节仍有简化。*
+
+```mermaid
+flowchart TD
+    %% 定义节点样式
+    classDef keyNode stroke:#00a2e9,stroke-width:3;
+    classDef cloudNode stroke:#f57c00;
+    classDef playerNode stroke:#4caf50,stroke-width:3;
+
+    subgraph GroupGen["📦 SmartStrm 生成"]
+        storage["➕ 添加存储"] --> task["📋 添加任务"]
+        task --> gen["📝 生成STRM"]
+    end
+
+    gen --> add2emby("📚 Emby入库")
+    add2emby --> getplayinfo(["▶️ 请求播放"]):::playerNode
+
+    getplayinfo -->|8097| proxy{{"🎭 代理请求"}}
+    getplayinfo -.-> |8096| emby
+
+    subgraph GroupProxy["🚀 SmartStrm 代理"]
+        proxy ==> ssHandle[/"🔀 处理数据"/]:::keyNode
+        cache[("直链缓存")]:::keyNode -.-> smartstrm
+        ssHandle ==> whatstrm{"🧠 STRM类型"}
+        whatstrm ==>|"由 SmartStrm 生成"| smartstrm["✨ SmartStrm解析"]:::keyNode
+        whatstrm -->|"由第三方生成"| otherstrm["第三方解析"]
+    end
+    ssHandle -.->|交换数据| playback
+    playback -.-> ssHandle
+    emby -.->|⚡首播优化| ssHandle
+
+    otherstrm -.->|支持302| cloud{{"☁️ 云盘"}}:::cloudNode
+    smartstrm ==>|✅ 302重定向| cloud
+    cloud ==>|🔗直链| player(["📺 播放器播放"]):::playerNode
+    otherstrm -.->|不支持302| 第三方代理 -.->|NAS上行| player
+
+
+    subgraph GroupEmby["Emby 默认"]
+        emby["Emby"] -.-> isFirstPlay{"是否首播"}
+        isFirstPlay -.->|否| playback[/"播放信息"/] -.-> decode["Emby解码"]
+        isFirstPlay -.->|是| codec[识别媒体编码] -.-> playback
+        cloud1{{"云盘"}}:::cloudNode -.->|数据流| codec
+        cloud2{{"云盘"}}:::cloudNode -.->|数据流| decode
+    end
+    decode -.-> |NAS上行| player
+```
