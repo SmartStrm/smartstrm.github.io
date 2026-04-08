@@ -38,7 +38,7 @@
 
 > [!TIP]
 >
-> 可能是全网第一个把 STRM 302 方案解释清楚的原理图，**古法手打，人工校对，引用请保留出处**。
+> 可能是**全网第一个**对 STRM 302 方案详细解释的原理图，**古法手打，人工校对，引用请保留出处**。
 >
 > *为便于识别和理解，部分细节仍有简化。*
 
@@ -50,20 +50,20 @@ flowchart TD
     classDef playerNode stroke:#4caf50,stroke-width:3;
 
     subgraph GroupGen["📦 SmartStrm 生成"]
-        storage["➕ 添加存储"] --> task["📋 添加任务"]
-        task --> gen["📝 生成STRM"]
+        storage["➕ 添加存储"] ==> task["📋 添加任务"]
+        task ==> gen["📝 生成STRM"]
     end
 
     gen --> add2emby("📚 Emby入库")
     add2emby --> getplayinfo(["▶️ 请求播放"]):::playerNode
 
-    getplayinfo -->|8097| proxy{{"🎭 代理请求"}}
+    getplayinfo ==>|8097| proxy{{"🎭 代理请求"}}
     getplayinfo -.-> |8096| emby
 
     subgraph GroupProxy["🚀 SmartStrm 代理"]
         proxy ==> ssHandle[/"🔀 处理数据"/]:::keyNode
         cache[("直链缓存")]:::keyNode -.-> smartstrm
-        ssHandle ==> whatstrm{"🧠 STRM类型"}
+        ssHandle ==> whatstrm{"🧠 识别<br>STRM类型"}
         whatstrm ==>|"由 SmartStrm 生成"| smartstrm["✨ SmartStrm解析"]:::keyNode
         whatstrm -->|"由第三方生成"| otherstrm["第三方解析"]
     end
@@ -79,7 +79,7 @@ flowchart TD
 
     subgraph GroupEmby["Emby 默认"]
         emby["Emby"] -.-> isFirstPlay{"是否首播"}
-        isFirstPlay -.->|否| playback[/"播放信息"/] -.-> decode["Emby解码"]
+        isFirstPlay -.->|否| playback[/"返回播放信息"/] -.-> decode["Emby解码"]
         isFirstPlay -.->|是| codec[识别媒体编码] -.-> playback
         cloud1{{"云盘"}}:::cloudNode -.->|数据流| codec
         cloud2{{"云盘"}}:::cloudNode -.->|数据流| decode
