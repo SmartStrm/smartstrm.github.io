@@ -26,6 +26,12 @@
 
   其“客户端推荐”具有参考价值，帮助你选择适合自己的 Emby 客户端。
 
+- [Emby 媒体命名最佳实践](https://emby.media/support/articles/Movie-Naming.html)
+
+- [Infuse 媒体命名最佳实践](https://support.firecore.com/hc/zh-cn/articles/215090947-%E5%85%83%E6%95%B0%E6%8D%AE-101)
+
+- [Windows 文件系统命名约定](https://learn.microsoft.com/zh-cn/windows/win32/fileio/naming-a-file#naming-conventions)
+
 ## 简明技巧
 
 ### 夸克网盘移动端 URL 抓包
