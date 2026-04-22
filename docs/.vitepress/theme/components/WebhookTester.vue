@@ -44,6 +44,49 @@ const minBody = () => {
 
 const requestBodyStr = ref(``)
 
+const highlightJson = (json) => {
+  if (!json) return ''
+  const escaped = json
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+  
+  return escaped.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, (match) => {
+    let cls = 'json-number'
+    if (/^"/.test(match)) {
+      if (/:$/.test(match)) {
+        cls = 'json-key'
+      } else {
+        cls = 'json-string'
+      }
+    } else if (/true|false/.test(match)) {
+      cls = 'json-boolean'
+    } else if (/null/.test(match)) {
+      cls = 'json-null'
+    }
+    return `<span class="${cls}">${match}</span>`
+  })
+}
+
+const highlightedResult = computed(() => {
+  if (!result.value) return ''
+  try {
+    const parsed = JSON.parse(result.value)
+    return highlightJson(JSON.stringify(parsed, null, 2))
+  } catch (e) {
+    return result.value
+  }
+})
+
+const syncScroll = (e) => {
+  const textarea = e.target
+  const pre = textarea.previousElementSibling
+  if (pre) {
+    pre.scrollTop = textarea.scrollTop
+    pre.scrollLeft = textarea.scrollLeft
+  }
+}
+
 const sendRequest = async () => {
   loading.value = true
   result.value = ''
@@ -81,7 +124,10 @@ resetBody()
 
     <div class="form-group">
       <label>请求体 (JSON)</label>
-      <textarea v-model="requestBodyStr" rows="10"></textarea>
+      <div class="editor-container">
+        <pre class="highlight-layer" v-html="highlightJson(requestBodyStr) + '\n'"></pre>
+        <textarea v-model="requestBodyStr" rows="10" spellcheck="false" @scroll="syncScroll"></textarea>
+      </div>
     </div>
 
     <div class="buttons">
@@ -94,7 +140,7 @@ resetBody()
 
     <div v-if="status !== null" class="result">
       <label>响应状态: <span :class="status === 200 ? 'success' : 'error'">{{ status }}</span></label>
-      <pre>{{ result }}</pre>
+      <pre v-html="highlightedResult"></pre>
     </div>
   </div>
 </template>
@@ -119,8 +165,7 @@ resetBody()
   font-size: 14px;
 }
 
-.form-group input,
-.form-group textarea {
+.form-group input {
   width: 100%;
   padding: 8px 12px;
   border: 1px solid var(--vp-c-divider);
@@ -131,8 +176,54 @@ resetBody()
   font-size: 13px;
 }
 
-.form-group textarea {
+.editor-container {
+  position: relative;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  overflow: hidden;
+}
+
+.highlight-layer,
+.editor-container textarea {
+  width: 100%;
+  margin: 0;
+  padding: 12px;
+  border: none;
+  font-family: var(--vp-font-family-mono);
+  font-size: 13px;
+  line-height: 1.5;
+  tab-size: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+  box-sizing: border-box;
+}
+
+.highlight-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  color: var(--vp-c-text-1);
+  overflow: hidden;
+}
+
+.editor-container textarea {
+  position: relative;
+  height: 240px;
+  min-height: 120px;
+  background: transparent;
+  color: transparent;
+  caret-color: var(--vp-c-text-1);
   resize: vertical;
+  display: block;
+  z-index: 1;
+}
+
+.editor-container textarea:focus {
+  outline: none;
 }
 
 .buttons {
@@ -197,4 +288,16 @@ resetBody()
 .error {
   color: #ef4444;
 }
+
+/* JSON Highlighting Colors */
+:deep(.json-key) { color: var(--vp-c-brand-1); }
+:deep(.json-string) { color: #10b981; }
+:deep(.json-number) { color: #f59e0b; }
+:deep(.json-boolean) { color: #3b82f6; }
+:deep(.json-null) { color: #8b5cf6; }
+
+.dark :deep(.json-string) { color: #34d399; }
+.dark :deep(.json-number) { color: #fbbf24; }
+.dark :deep(.json-boolean) { color: #60a5fa; }
+.dark :deep(.json-null) { color: #a78bfa; }
 </style>
