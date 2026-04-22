@@ -31,6 +31,9 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   lang: 'zh-CN',
   cleanUrls: true,
+  rewrites: {
+    "help/changelog.md": "changelog.md"
+  },
   themeConfig: {
     logo: '/icon.svg',
     // https://vitepress.dev/reference/default-theme-config
@@ -200,7 +203,7 @@ export default defineConfig({
         items: [
           {
             text: '更新日志',
-            link: '/help/changelog'
+            link: '/changelog'
           },
           {
             text: 'GitHub',
