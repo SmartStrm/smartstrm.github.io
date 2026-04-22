@@ -165,19 +165,23 @@ body = '''
 
 ## 开发者接口
 
-SmartStrm 还支持通过自定义 POST 请求手动触发特定任务，供开发者调用：
+SmartStrm 还支持通过自定义 POST 请求触发特定任务，供开发者调用：
 
 ```bash
 curl --request POST \
-  --url http://127.0.0.1:8024/webhook/9dfb51234d483e83 \
+  --url http://127.0.0.1:8024/webhook/9dfb5769ad483e83 \
   --header 'Content-Type: application/json' \
   --data '{
     "event": "a_task",
-    "delay": 0,
     "task": {
         "name": "test",
-        "storage_path": "/drive/quark/test"
+        "storage_path": "/drive/quark/test",
+        "dir_time_check": false,
+        "incremental": false,
+        "keep_local_asset": true,
+        "plugins": {}
     },
+    "delay": 0,
     "strm": {
         "media_ext": [
             "mp4",
@@ -193,20 +197,25 @@ curl --request POST \
 }'
 ```
 
-| 参数                | 说明                                 |
-| :------------------ | :----------------------------------- |
-| `event`             | 固定为 `a_task`                      |
-| `task.name`         | 已存在的任务名，仅支持单个           |
-| `task.storage_path` | 可选，填写时必须为任务的路径或子路径 |
-| `delay`             | 可选，延迟执行的秒数                 |
-| `strm`              | 可选，STRM 设置字典                  |
+| 参数                    | 说明                                 |
+| :---------------------- | :----------------------------------- |
+| `event`                 | 固定为 `a_task`                      |
+| `task.name`             | 已存在的任务名，仅支持单个           |
+| `task.storage_path`     | 可选，填写时必须为任务的路径或子路径 |
+| `task.dir_time_check`   | 可选，启用目录时间检查               |
+| `task.incremental`      | 可选，启用增量生成，反之同步生成     |
+| `task.keep_local_asset` | 可选，同步生成时保留本地刮削         |
+| `task.plugins`          | 可选，任务调用插件的参数字典         |
+| `delay`                 | 可选，收到 hook 后延迟执行的秒数     |
+| `strm`                  | 可选，STRM 设置字典                  |
 
-最小化请求示例：
+可选参数未提供时，默认按系统和任务设置中的值执行。
+
+**最小化请求示例：**
 
 ```bash
 curl --request POST \
-  --url http://127.0.0.1:8024/webhook/9dfb51234d483e83 \
-  --header 'Content-Type: application/json' \
+  --url http://127.0.0.1:8024/webhook/9dfb5769ad483e83 \
   --data '{
     "event": "a_task",
     "task": {
