@@ -17,6 +17,7 @@
 - [**飞牛影视配置 STRM 指南**](https://www.wifilu.com/4683.html)
 - [**搭建 Emby+SmartStrm 实现网盘影音丝滑播放**](https://mp.weixin.qq.com/s/cGc19triWkT5v_EjOvt0ig)
 - [**Docker 推荐：Strm 生成工具 SmartStrm**](https://mp.weixin.qq.com/s/q_Yz77DnZ4nRf3EjWaVxjg)
+- [**CAS + cas2ss + SmartStrm, 天翼云盘订阅追剧新姿势**](https://club.fnnas.com/forum.php?mod=viewthread&tid=61826)
 
 ## 参与创作
 
