@@ -27,8 +27,17 @@ export default defineConfig({
     }
   },
   title: "SmartStrm",
-  description: "SmartStrm 用户文档 - 一个媒体库 STRM 文件生成工具",
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  description: "SmartStrm 是一款专业的媒体库 STRM 文件生成与管理工具，支持夸克、115、天翼等主流云盘，为 Emby、Jellyfin、Plex 等媒体服务器提供 302 直链播放解决方案，实现网盘资源秒开入库。",
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
+    ['meta', { name: 'keywords', content: 'SmartStrm,STRM生成,媒体库管理,Emby,Jellyfin,Plex,302直链,云盘播放,夸克云盘,115云盘,天翼云盘,媒体服务器,网盘媒体库' }],
+    ['meta', { name: 'author', content: 'Cp0204' }],
+    ['meta', { property: 'og:title', content: 'SmartStrm - 媒体库 STRM 生成工具' }],
+    ['meta', { property: 'og:description', content: '专业的媒体库 STRM 文件生成与管理工具，支持主流云盘与媒体服务器 302 直链播放' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:url', content: 'https://smartstrm.github.io' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+  ],
   lang: 'zh-CN',
   cleanUrls: true,
   rewrites: {
