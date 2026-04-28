@@ -8,7 +8,7 @@ SmartStrm 主要通过 Docker 镜像分发，支持 Linux 与所有常见的 NAS
 
 ::: code-group
 
-```yaml{9-11,15-16} [docker-compose.yaml]
+```yaml{9-12,16-17} [docker-compose.yaml]
 name: smartstrm
 services:
   smartstrm:
@@ -18,8 +18,9 @@ services:
     network_mode: host
     volumes:
       - /yourpath/smartstrm/config:/app/config # 挂载配置目录
-      - /yourpath/smartstrm/logs:/app/logs # 挂载日志目录，可选
       - /yourpath/smartstrm/strm:/strm # 挂载 STRM 生成目录
+      - /yourpath/smartstrm/logs:/app/logs # 挂载日志目录，可选
+      - /yourpath/smartstrm/tools:/app/tools # 挂载工具目录，可选
       # 以上 /yourpath 改为你实际存放配置的路径
     environment:
       - PORT=8024 # 管理端口，可选
@@ -27,14 +28,15 @@ services:
       - ADMIN_PASSWORD=admin123 # 管理用户密码
 ```
 
-```bash{5-7,10-11} [docker run]
+```bash{5-8,11-12} [docker run]
 docker run -d \
   --name smartstrm \
   --restart unless-stopped \
   --network host \
   -v /yourpath/smartstrm/config:/app/config \  # 挂载配置目录
-  -v /yourpath/smartstrm/logs:/app/logs \  # 挂载日志目录，可选
   -v /yourpath/smartstrm/strm:/strm \  # 挂载 STRM 生成目录
+  -v /yourpath/smartstrm/tools:/app/tools \  # 挂载工具目录，可选
+  -v /yourpath/smartstrm/logs:/app/logs \  # 挂载日志目录，可选
   # 以上 /yourpath 改为你实际存放配置的路径
   -e PORT=8024 \  # 管理端口，可选
   -e ADMIN_USERNAME=admin \  # 管理用户名
