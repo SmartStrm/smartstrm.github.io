@@ -6,6 +6,7 @@
 
 - [**10分钟搞定！飞牛OS部署 SmartStrm+Emby 最强联动**](https://www.bilibili.com/video/BV14shdzaEY7/)
 - [**SmartStrm 302 原理，使用演示，在外秒播云盘资源**](https://www.bilibili.com/video/BV1DKaGzUEP7/)
+- [**告别硬盘焦虑：手把手教你打造“空壳”影音系统，只有1KB也能看4K蓝光 | Jellyfin + SmartStrm + CloudSaver 闭环联动教学**](https://www.youtube.com/watch?v=5nhwJK8W_mw)
 
 ## 图文教程
 
@@ -17,7 +18,8 @@
 - [**飞牛影视配置 STRM 指南**](https://www.wifilu.com/4683.html)
 - [**搭建 Emby+SmartStrm 实现网盘影音丝滑播放**](https://mp.weixin.qq.com/s/cGc19triWkT5v_EjOvt0ig)
 - [**Docker 推荐：Strm 生成工具 SmartStrm**](https://mp.weixin.qq.com/s/q_Yz77DnZ4nRf3EjWaVxjg)
-- [**CAS + cas2ss + SmartStrm, 天翼云盘订阅追剧新姿势**](https://club.fnnas.com/forum.php?mod=viewthread&tid=61826)
+- [**cloud189-auto-save + cas2ss + SmartStrm, 天翼云盘订阅追剧新姿势**](https://club.fnnas.com/forum.php?mod=viewthread&tid=61826)
+- [**基于网盘的自动转存与 STRM 生成方案 CloudSaver + SmartSTRM + Jellyfin 实现零本地存储播放**](https://317520.xyz/post/wpzc)
 
 ## 参与创作
 
