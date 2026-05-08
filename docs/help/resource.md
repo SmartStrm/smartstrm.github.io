@@ -1,6 +1,6 @@
 # 资源与技巧
 
-这里提供一些与项目使用非直接相关，但可能对你整体使用有帮助的工具与技巧。
+这里提供一些与项目使用非必须的，但可能对你整体使用有帮助的工具与技巧。
 
 ## 精选工具
 
@@ -10,11 +10,19 @@
 
 - [CloudSaver](https://github.com/jiangrui1994/cloudsaver)
 
-  一个基于 Vue 3 + Express 的网盘资源搜索与转存工具。
+  网盘资源搜索与转存工具，支持豆瓣热门榜单展示，支持115网盘，夸克网盘，天翼网盘，123云盘一键转存。
+
+- [cas2ss](https://github.com/sisheng36/CAS2SS)
+
+  轻量级中间件，将 cloud189-auto-save 任务更新自动推送到 SmartStrm Webhook。
+
+- [TGAutoSaveDrive](https://github.com/ccc333cn/tgautosavedrive)
+
+  Telegram 频道追更转存助手，目前仅支持 115 网盘，重点适配 gimy115 和 QukanMovie 两类频道格式。
 
 - [StrmTool](https://github.com/jinlin-teck/StrmTool)
 
-  支持 Emby/Jellyfin 的插件，用于优化 strm 文件的媒体信息管理和播放体验。
+  为 Emby/Jellyfin 设计的插件，用于优化 strm 文件的媒体信息管理和播放体验。
 
 ## 文档资料
 
@@ -24,7 +32,7 @@
 
 - [Emby公益不完全指北](https://wiki.freeembyguide.eu.org/docs/use/recommand.html)
 
-  其“客户端推荐”具有参考价值，帮助你选择适合自己的 Emby 客户端。
+  其“客户端推荐”章节具有参考价值，帮助你选择适合自己的 Emby 客户端。
 
 - [Emby 媒体命名最佳实践](https://emby.media/support/articles/Movie-Naming.html)
 
