@@ -89,8 +89,6 @@ const syncScroll = (e) => {
 
 const sendRequest = async () => {
   loading.value = true
-  result.value = ''
-  status.value = null
 
   try {
     const response = await fetch(url.value, {
@@ -138,7 +136,7 @@ resetBody()
       <button @click="minBody" class="btn-secondary">最小示例</button>
     </div>
 
-    <div v-if="status !== null" class="result">
+    <div v-if="status !== null" class="result" :class="{ loading }">
       <label>响应状态: <span :class="status === 200 ? 'success' : 'error'">{{ status }}</span></label>
       <pre v-html="highlightedResult"></pre>
     </div>
@@ -287,6 +285,12 @@ resetBody()
 
 .error {
   color: #ef4444;
+}
+
+.result.loading {
+  opacity: 0.4;
+  pointer-events: none;
+  transition: opacity 0.2s;
 }
 
 /* JSON Highlighting Colors */
