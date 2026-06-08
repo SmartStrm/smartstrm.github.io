@@ -216,6 +216,7 @@ curl --request POST \
 ```bash
 curl --request POST \
   --url http://127.0.0.1:8024/webhook/9dfb5769ad483e83 \
+  --header 'Content-Type: application/json' \
   --data '{
     "event": "a_task",
     "task": {
