@@ -38,3 +38,10 @@ features:
     details: 一站式 Emby/Jellyfin/Plex 302 直链播放，享受最顺畅的播放体验。
     link: settings/proxy
 ---
+
+> [!TIP] 💡 提示
+> 你可以使用 AI 智能体来辅助了解本项目。
+> ```
+> 阅读 SmartStrm 文档，指引我快速上手
+> https://smartstrm.github.io/llms-full.txt
+> ```
