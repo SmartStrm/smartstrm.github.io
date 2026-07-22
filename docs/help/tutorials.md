@@ -20,6 +20,7 @@
 - [**Docker 推荐：Strm 生成工具 SmartStrm**](https://mp.weixin.qq.com/s/q_Yz77DnZ4nRf3EjWaVxjg)
 - [**cloud189-auto-save + cas2ss + SmartStrm, 天翼云盘订阅追剧新姿势**](https://club.fnnas.com/forum.php?mod=viewthread&tid=61826)
 - [**基于网盘的自动转存与 STRM 生成方案 CloudSaver + SmartSTRM + Jellyfin 实现零本地存储播放**](https://317520.xyz/post/wpzc)
+- [**使用 SmartStrm + Thunder-MT，普通白金会员（VIP）也可以在家流畅看高码率电影**](https://club.fnnas.com/forum.php?mod=viewthread&tid=67721)
 
 ## 参与创作
 
