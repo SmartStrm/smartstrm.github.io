@@ -23,7 +23,7 @@ hero:
 features:
   - title: 多驱动支持
     icon: 📦
-    details: 支持 OpenList、WebDAV、夸克、115、天翼、迅雷云盘等网络驱动。
+    details: 支持 OpenList、WebDAV、夸克、115、123、天翼、迅雷等网络驱动。
     link: module/storage
   - title: 自动化任务
     icon: ⏰
