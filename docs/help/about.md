@@ -36,3 +36,9 @@ STRM 生成的基础功能免费，基于免费版本就可以实现用 STRM 方
 ### Logo
 
 ![logo](img/logo.png)
+
+## 法律条款
+
+- [使用条款](/help/terms-of-service)
+- [隐私政策](/help/privacy-policy)
+- [开放源代码许可](/help/open-source-software-notice)
