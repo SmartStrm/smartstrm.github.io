@@ -9,7 +9,9 @@ export default defineConfig({
     plugins: [
       llmstxt({
         ignoreFiles: [
-          'help/open-source-software-notice.md'
+          'help/open-source-software-notice.md',
+          'help/privacy-policy.md',
+          'help/terms-of-service.md',
         ]
       })
     ],
