@@ -31,6 +31,7 @@ export default defineConfig({
   title: "SmartStrm",
   description: "SmartStrm 是一款专业的媒体库 STRM 文件生成与管理工具，支持夸克、115、天翼等主流云盘，为 Emby、Jellyfin、Plex 等媒体服务器提供 302 直链播放解决方案，实现网盘资源秒开入库。",
   head: [
+    ['script', { defer: '', src: 'https://u.0x69.win/script.js', 'data-website-id': '22852925-c379-46a1-bc5d-ef4860303fb8' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'keywords', content: 'SmartStrm,STRM生成,媒体库管理,Emby,Jellyfin,Plex,302直链,云盘播放,夸克云盘,115云盘,天翼云盘,媒体服务器,网盘媒体库' }],
     ['meta', { name: 'author', content: 'Cp0204' }],
