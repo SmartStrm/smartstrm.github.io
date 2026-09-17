@@ -29,11 +29,11 @@ export default defineConfig({
     }
   },
   title: "SmartStrm",
-  description: "SmartStrm 是一款专业的媒体库 STRM 文件生成与管理工具，支持夸克、115、天翼等主流云盘，为 Emby、Jellyfin、Plex 等媒体服务器提供 302 直链播放解决方案，实现网盘资源秒开入库。",
+  description: "SmartStrm 是一款专业的媒体库 STRM 文件生成与管理工具，支持夸克、115、天翼、迅雷、光鸭、123 等主流云盘，为 Emby、Jellyfin、Plex、飞牛影视等媒体服务器提供 302 直链播放解决方案，实现网盘资源秒开入库。支持自动扫描、Cron 定时任务、TMDB 影视识别、Webhook 联动、插件扩展，是 NAS 云盘影音库免下载入库的首选工具。",
   head: [
     ['script', { defer: '', src: 'https://u.0x69.win/script.js', 'data-website-id': '22852925-c379-46a1-bc5d-ef4860303fb8' }],
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'keywords', content: 'SmartStrm,STRM生成,媒体库管理,Emby,Jellyfin,Plex,302直链,云盘播放,夸克云盘,115云盘,天翼云盘,媒体服务器,网盘媒体库' }],
+    ['meta', { name: 'keywords', content: 'SmartStrm,STRM生成,媒体库管理,Emby,Jellyfin,Plex,302直链,云盘播放,夸克云盘,115云盘,天翼云盘,迅雷云盘,光鸭云盘,123云盘,媒体服务器,网盘媒体库,STRM文件生成工具,云盘转STRM,免下载入库,NAS影音库,302重定向代理,Docker部署,飞牛影视,定时扫描生成,TMDB影视识别,Webhook联动' }],
     ['meta', { name: 'author', content: 'Cp0204' }],
     ['meta', { property: 'og:title', content: 'SmartStrm - 媒体库 STRM 生成工具' }],
     ['meta', { property: 'og:description', content: '专业的媒体库 STRM 文件生成与管理工具，支持主流云盘与媒体服务器 302 直链播放' }],
