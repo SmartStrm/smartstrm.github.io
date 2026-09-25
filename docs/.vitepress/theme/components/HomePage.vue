@@ -74,6 +74,7 @@ onBeforeUnmount(() => { cleanup(); window.removeEventListener('scroll', onScroll
           <div class="ss-badge-group ss-badge-cloud-group">
             <span class="ss-badge ss-badge-cloud">夸克</span>
             <span class="ss-badge ss-badge-cloud">天翼</span>
+            <span class="ss-badge ss-badge-cloud">移动</span>
             <span class="ss-badge ss-badge-cloud">115</span>
             <span class="ss-badge ss-badge-cloud">123</span>
             <span class="ss-badge ss-badge-cloud">迅雷</span>
